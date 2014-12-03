@@ -16,7 +16,7 @@ def calculate_basic_pay(hours,rate):
 def calculate_overtime_pay(hours,rate):
     overtime_hours=hours-40
     basic_pay=40*rate
-    overtime_pay=ovetime-hours*(rate*1.5)
+    overtime_pay=overtime_hours*(rate*1.5)
     total=basic_pay + overtime_pay
     return total
 
@@ -30,18 +30,17 @@ def calculate_total_pay(hours,rate):
 def hours_and_rate():
     hours=int(input("please enter the number of hours worked: "))
     rate=int(input("please enter the rate: "))
-    return hours
-    return rate
+    return hours,rate
+    
 
 def display_total_pay(total):
-    total=calculate_total_pay(hours,rate)
-    return total
-
+    print(total)
 def calculate_pay():
-    total=display_total_pay(total)
+    hours,rate=hours_and_rate()
+    total=calculate_total_pay(hours,rate)
+    display_total_pay(total)
     return total
 
-hours_rate=hours_and_rate()
-total_pay=calculate_pay()
-print(total_pay)
+calculate_pay()
+
                     
